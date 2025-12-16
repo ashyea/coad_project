@@ -1,3 +1,6 @@
+#This code can be used to make a stacked bar graph comparing mutation frequencies for any studies. 
+
+#install the mentioned packages beforehand
 library(cbioportalR)
 library(dplyr)
 library(ggplot2)
@@ -109,5 +112,6 @@ ggplot(mutation_freq, aes(x = study, y = frequency, fill = hugoGeneSymbol)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank())
+
 
 ggsave("mutation_frequency_stacked_bar.png", width = 12, height = 8, dpi = 300)
